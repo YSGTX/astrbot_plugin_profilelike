@@ -1,4 +1,4 @@
-from aiocqhttp import exceptions
+ï»¿from aiocqhttp import exceptions
 from aiocqhttp import CQHttp
 from astrbot.api import logger
 
@@ -11,8 +11,8 @@ class Operator:
     async def submit_likes(self, user_id: str, times: int) -> str:
         try:
             await self.client.send_like(user_id(int), times)
-            logger.info(f"¸øÓÃ»§ {user_id} µãÔŞÁË {times} ´Î¡£")
-            return f"ÒÑÎª {user_id} µãÔŞ {times} ´Î¡£"
+            logger.info(f"ç»™ç”¨æˆ· {user_id} ç‚¹èµäº† {times} æ¬¡ã€‚")
+            return f"å·²ä¸º {user_id} ç‚¹èµ {times} æ¬¡ã€‚"
         except self.exc.ActionFailed as e:
-            logger.error(f"¸øÓÃ»§ {user_id} µãÔŞÊ±³öÏÖ´íÎó: {e}")
-            return f"µãÔŞÊ§°Ü: {str(e)}"
+            logger.error(f"ç»™ç”¨æˆ· {user_id} ç‚¹èµæ—¶å‡ºç°é”™è¯¯: {e}")
+            return f"ç‚¹èµå¤±è´¥: {str(e)}"
